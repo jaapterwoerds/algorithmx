@@ -42,8 +42,8 @@ pretty xs = prettyRow row  ++ "\n" ++ pretty rest where row = take size xs
                                                         rest =drop size xs
 
 prettyRow :: [CellCoordinate] -> String
-prettyRow xs = show values where values = map value xs
-                                 value (v,_,_) = v
+prettyRow xs = show vals where vals = map value xs
+                               value (v,_,_) = v
                                  
 -- Ordering for CelCoordinates to be able to sort the solution by row and column                               
 sortCell :: CellCoordinate -> CellCoordinate -> Ordering
