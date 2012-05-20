@@ -1,0 +1,39 @@
+Name:                Sudoku
+Version:             0.1
+License:             BSD3
+License-file:        LICENSE.txt
+Copyright:           Jaap ter Woerds, 2012
+Author:              Jaap ter Woerds
+Maintainer:          jaap.ter.woerds@gmail.com
+Stability:           beta
+Category:            Cabal
+Cabal-version:       >=1.10
+Build-type:          Simple
+Synopsis:            Example sudoku solver using a implementation of Donald Knuth's algorithm X.
+Description:         TBD
+Extra-source-files:  README.txt, TODO
+tested-with:         GHC==7.0.4
+
+executable Sudoku
+  default-language: Haskell2010
+  hs-source-dirs:  src
+  main-is:         Main.hs
+  build-depends:   base >= 4,
+                   parsec
+  ghc-options:     -Wall
+  other-modules:   
+                   SudokuParser,
+                   Sudoku,
+                   Matrix,
+                   ExactCover
+
+executable Tests
+  default-language: Haskell2010
+  hs-source-dirs:  tests,src
+  main-is:         TestDLX2.hs
+  build-depends:   base >= 4,
+                   HTF > 0.5
+  ghc-options:     -Wall
+  other-modules:   
+                   Matrix,
+                   ExactCover
