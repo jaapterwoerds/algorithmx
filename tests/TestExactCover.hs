@@ -5,6 +5,7 @@ import ExactCover
 
 import System.Environment(getArgs)
 import Test.Framework
+import Test.Framework.TestManager
 
 emptyMatrix :: Matrix Int Char
 emptyMatrix = []
@@ -27,13 +28,13 @@ simpleMatrix = [
     (5, "CD"),
     (6, "DE"),
     (7, "ACEF")]
-test_simpleMatrix = assertEqual "BDF" (solve simpleMatrix)    
+test_simpleMatrix = assertEqual "BDF" (solve simpleMatrix)
 
 -- A case in which there is no exact cover possible
 matrixWithoutSolution = [(1, "A"),(2,[])]
-test_matrixNoSolution = assertEqual [] (solve matrixWithoutSolution) 
+test_matrixNoSolution = assertEqual [] (solve matrixWithoutSolution)
 
 -- Run the tests
 main =
     do args <- getArgs
-       runTestWithArgs args allHTFTests
+       runTestWithArgs args htf_thisModulesTests
