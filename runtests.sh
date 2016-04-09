@@ -1,2 +1,2 @@
 #!/bin/sh
-dist/build/Tests/Tests
+stack exec Tests

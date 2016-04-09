@@ -1,4 +1,4 @@
 #!/bin/sh
-cabal clean
-cabal configure
-cabal build
+stack clean 
+stack build
+
